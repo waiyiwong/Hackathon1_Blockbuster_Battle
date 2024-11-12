@@ -19,12 +19,62 @@
 
 <body>
     
-    <header></header>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="quiz.html">Quiz</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#feedback_modal">Feedback</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-    <main></main>
+    <main>
+
+        <!-- Feedback Modal -->
+        <div class="modal fade" id="feedback_modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <h1 class="modal-title fs-5" id="ModalLabel">Your feedback</h1>
+                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                 </div>
+                 <div class="modal-body">
+                   <form>
+                     <div class="mb-3">
+                       <label for="recipient-name" class="col-form-label">Your name:</label>
+                       <input type="text" class="form-control" id="recipient-name">
+                     </div>
+                     <div class="mb-3">
+                       <label for="message-text" class="col-form-label">Message:</label>
+                       <textarea class="form-control" id="message-text"></textarea>
+                     </div>
+                   </form>
+                 </div>
+                 <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                   <button type="button" class="btn btn-primary">Send message</button>
+                 </div>
+               </div>
+             </div>
+           </div>
+    </main>
 
     <footer></footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>
