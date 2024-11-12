@@ -390,3 +390,11 @@ function checkAnswer2() {
     }
     
 }
+
+//Increase correct answer counter
+function incrementScore() {
+
+    let oldScore = parseInt(document.querySelector("#score").innerText);
+    document.querySelector("#score").innerText = ++oldScore;
+
+}
