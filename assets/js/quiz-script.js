@@ -299,3 +299,132 @@ const test = [{
     date: 2001,
 }
 ];
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    movieOne.addEventListener("click", function () {
+        checkAnswer()
+    });
+    movieTwo.addEventListener("click", function () {
+        checkAnswer2()
+    });
+    document.querySelector("#restart-game").addEventListener("click", function () {
+        retryGame();
+    });
+
+    isHighScoreNumber();
+    runGame(test);
+});
+
+const currentUser = document.querySelector("#username").value
+const movieOne = document.querySelector("#movie1")
+const movieTwo = document.querySelector("#movie2")
+const FILM_1_LS_KEY = "film1";
+const FILM_2_LS_KEY = "film2";
+const USER_USERNAME_LS_KEY = "userUserName";
+const USER_HIGHSCORE_LS_KEY = "userHighScore";
+
+
+function isHighScoreNumber() {
+    if(!localStorage.getItem(USER_HIGHSCORE_LS_KEY)){
+        localStorage.setItem(USER_HIGHSCORE_LS_KEY,0)
+    }
+}
+
+function runGame(arr) {
+
+    let num1 = Math.floor(Math.random() * arr.length);
+    let num2 = Math.floor(Math.random() * arr.length);
+    while (num1 === num2) {
+        num2 = Math.floor(Math.random() * arr.length);
+    }
+    displayQuiz(num1, num2);
+}
+
+//display two randomly chosen movies from array and stores their index in local storage
+function displayQuiz(number1, number2) {
+
+    movieOne.textContent = test[number1].name;
+    localStorage.setItem(FILM_1_LS_KEY, number1);
+
+    movieTwo.textContent = test[number2].name;
+    localStorage.setItem(FILM_2_LS_KEY, number2)
+
+}
+
+// Check answer for left side button
+function checkAnswer() {
+    let button1 = parseInt(localStorage.getItem(FILM_1_LS_KEY));
+    let button2 = parseInt(localStorage.getItem(FILM_2_LS_KEY));
+
+
+    if (test[button1].value > test[button2].value) {
+        console.log("You Win")
+        runGame(test);
+        incrementScore();
+
+    } else {
+        console.log("You Lose")
+        runGame(test);
+        gameOver();
+    }
+        
+}
+
+// Check answer for right side button
+function checkAnswer2() {
+    let button1 = parseInt(localStorage.getItem(FILM_1_LS_KEY));
+    let button2 = parseInt(localStorage.getItem(FILM_2_LS_KEY));
+
+    if (test[button2].value > test[button1].value) {
+        console.log(test[button1].value)
+        console.log(test[button2].value)
+        console.log("You Win")
+        runGame(test);
+        incrementScore();
+
+    } else {
+        console.log("You Lose")
+        runGame(test);
+        gameOver();
+    }
+    
+}
+
+//Increase correct answer counter
+function incrementScore() {
+
+    let oldScore = parseInt(document.querySelector("#score").innerText);
+    document.querySelector("#score").innerText = ++oldScore;
+
+}
+
+// Toggle display none on front elements and show the restart game screen
+function gameOver() {
+
+    movieOne.classList.toggle("display-none")
+    movieTwo.classList.toggle("display-none")
+    document.querySelector("#movie-value-1").classList.toggle("display-none")
+    document.querySelector("#movie-value-2").classList.toggle("display-none")
+    document.querySelector(".scores").classList.toggle("display-none")
+    document.querySelector("#restart-game").classList.toggle("display-none")
+    let score = document.querySelector("#score").innerText
+    let username = document.querySelector("#username").innerText
+    localStorage.setItem(USER_USERNAME_LS_KEY,username)
+    if(parseInt(localStorage.getItem(USER_HIGHSCORE_LS_KEY)) < score){
+        localStorage.setItem(USER_HIGHSCORE_LS_KEY,score)
+    }
+}
+
+
+//Toggle classes again to return to original state, set correct answer counter to 0, run game again.
+function retryGame(){
+    document.querySelector("#score").innerText = 0;
+    movieOne.classList.toggle("display-none")
+    movieTwo.classList.toggle("display-none")
+    document.querySelector("#movie-value-1").classList.toggle("display-none")
+    document.querySelector("#movie-value-2").classList.toggle("display-none")
+    document.querySelector(".scores").classList.toggle("display-none")
+    document.querySelector("#restart-game").classList.toggle("display-none")
+    runGame(test);
+}
