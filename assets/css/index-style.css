@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "SFMoviePoster-Bold";
+    src: url("/assets/fonts/SFMoviePoster-Bold.ttf") format("truetype");
+}
+main {
+    background-color: rgb(25, 28, 32);
+    color: ivory;
+}
+
+.title {
+    font-family: "SFMoviePoster-Bold";
+    font-size: 8em;
+}
