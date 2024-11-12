@@ -299,3 +299,48 @@ const test = [{
     date: 2001,
 }
 ];
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    movieOne.addEventListener("click", function () {
+        checkAnswer()
+    });
+    movieTwo.addEventListener("click", function () {
+        checkAnswer2()
+    });
+    document.querySelector("#restart-game").addEventListener("click", function () {
+        retryGame();
+    });
+
+    isHighScoreNumber();
+    runGame(test);
+});
+
+const currentUser = document.querySelector("#username").value
+const movieOne = document.querySelector("#movie1")
+const movieTwo = document.querySelector("#movie2")
+const FILM_1_LS_KEY = "film1";
+const FILM_2_LS_KEY = "film2";
+const USER_USERNAME_LS_KEY = "userUserName";
+const USER_HIGHSCORE_LS_KEY = "userHighScore";
+
+
+function isHighScoreNumber() {
+    if(!localStorage.getItem(USER_HIGHSCORE_LS_KEY)){
+        localStorage.setItem(USER_HIGHSCORE_LS_KEY,0)
+    }
+}
+
+function runGame(arr) {
+
+    let num1 = Math.floor(Math.random() * arr.length);
+    let num2 = Math.floor(Math.random() * arr.length);
+    while (num1 === num2) {
+        num2 = Math.floor(Math.random() * arr.length);
+    }
+    displayQuiz(num1, num2);
+}
+
+
+
+
