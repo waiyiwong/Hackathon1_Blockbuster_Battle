@@ -341,6 +341,52 @@ function runGame(arr) {
     displayQuiz(num1, num2);
 }
 
+//display two randomly chosen movies from array and stores their index in local storage
+function displayQuiz(number1, number2) {
+
+    movieOne.textContent = test[number1].name;
+    localStorage.setItem(FILM_1_LS_KEY, number1);
+
+    movieTwo.textContent = test[number2].name;
+    localStorage.setItem(FILM_2_LS_KEY, number2)
+
+}
+
+// Check answer for left side button
+function checkAnswer() {
+    let button1 = parseInt(localStorage.getItem(FILM_1_LS_KEY));
+    let button2 = parseInt(localStorage.getItem(FILM_2_LS_KEY));
 
 
+    if (test[button1].value > test[button2].value) {
+        console.log("You Win")
+        runGame(test);
+        incrementScore();
 
+    } else {
+        console.log("You Lose")
+        runGame(test);
+        WrongAnswer();
+    }
+        
+}
+
+// Check answer for right side button
+function checkAnswer2() {
+    let button1 = parseInt(localStorage.getItem(FILM_1_LS_KEY));
+    let button2 = parseInt(localStorage.getItem(FILM_2_LS_KEY));
+
+    if (test[button2].value > test[button1].value) {
+        console.log(test[button1].value)
+        console.log(test[button2].value)
+        console.log("You Win")
+        runGame(test);
+        incrementScore();
+
+    } else {
+        console.log("You Lose")
+        runGame(test);
+        WrongAnswer();
+    }
+    
+}
