@@ -366,7 +366,7 @@ function checkAnswer() {
     } else {
         console.log("You Lose")
         runGame(test);
-        WrongAnswer();
+        gameOver();
     }
         
 }
@@ -386,7 +386,7 @@ function checkAnswer2() {
     } else {
         console.log("You Lose")
         runGame(test);
-        WrongAnswer();
+        gameOver();
     }
     
 }
@@ -397,4 +397,34 @@ function incrementScore() {
     let oldScore = parseInt(document.querySelector("#score").innerText);
     document.querySelector("#score").innerText = ++oldScore;
 
+}
+
+// Toggle display none on front elements and show the restart game screen
+function gameOver() {
+
+    movieOne.classList.toggle("display-none")
+    movieTwo.classList.toggle("display-none")
+    document.querySelector("#movie-value-1").classList.toggle("display-none")
+    document.querySelector("#movie-value-2").classList.toggle("display-none")
+    document.querySelector(".scores").classList.toggle("display-none")
+    document.querySelector("#restart-game").classList.toggle("display-none")
+    let score = document.querySelector("#score").innerText
+    let username = document.querySelector("#username").innerText
+    localStorage.setItem(USER_USERNAME_LS_KEY,username)
+    if(parseInt(localStorage.getItem(USER_HIGHSCORE_LS_KEY)) < score){
+        localStorage.setItem(USER_HIGHSCORE_LS_KEY,score)
+    }
+}
+
+
+//Toggle classes again to return to original state, set correct answer counter to 0, run game again.
+function retryGame(){
+    document.querySelector("#score").innerText = 0;
+    movieOne.classList.toggle("display-none")
+    movieTwo.classList.toggle("display-none")
+    document.querySelector("#movie-value-1").classList.toggle("display-none")
+    document.querySelector("#movie-value-2").classList.toggle("display-none")
+    document.querySelector(".scores").classList.toggle("display-none")
+    document.querySelector("#restart-game").classList.toggle("display-none")
+    runGame(test);
 }
