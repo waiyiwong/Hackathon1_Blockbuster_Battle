@@ -24,6 +24,10 @@
     background-size: cover;
     height: 100vh;
 }
+.wai-hr {
+    width: 28;
+    margin: auto;
+}
 
 /* Modal feedback styling  */
 .modal-content {
