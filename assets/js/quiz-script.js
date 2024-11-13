@@ -363,47 +363,50 @@ function checkAnswer(e) {
 
     if (e.currentTarget.getAttribute("data-type") == "choice1"){
         if (test[button1].value > test[button2].value) {
-            console.log("You Win");
-            disableSpamCheckAnswer();
-            imgOneCorrect();
-            imgTwoIncorrect();
-            // setTimeout(disableSpamCheckAnswer, 4000);
-            setTimeout(runGame, 2000 ,test);
-            incrementScore();
-            setTimeout(imgOneCorrect, 2000);
-            setTimeout(imgTwoIncorrect, 2000);
+            if(!document.querySelector("#img-1").classList.contains("postercorrectanswer")){
+                console.log("You Win");
+                imgOneCorrect();
+                imgTwoIncorrect();
+                incrementScore();
+                setTimeout(runGame, 2000 ,test);
+                setTimeout(imgOneCorrect, 2000);
+                setTimeout(imgTwoIncorrect, 2000);
+            } else { return; }
 
 
         } else {
-            console.log("You Lose");
-            disableSpamCheckAnswer();
-            imgTwoCorrect();
-            imgOneIncorrect();
-
-            setTimeout(disableSpamCheckAnswer, 2000);
-            setTimeout(gameOver, 2000);
-            setTimeout(imgTwoCorrect, 2000);
-            setTimeout(imgOneIncorrect, 2000);
+            if(!document.querySelector("#img-1").classList.contains("posterincorrectanswer")){
+                console.log("You Lose");
+                imgTwoCorrect();
+                imgOneIncorrect();
+                setTimeout(gameOver, 2000);
+                setTimeout(imgTwoCorrect, 2000);
+                setTimeout(imgOneIncorrect, 2000);
+            } else { return; }
 
         }
     } else if (e.currentTarget.getAttribute("data-type") == "choice2"){
         if (test[button2].value > test[button1].value) {
-            console.log("You Win");
-            imgTwoCorrect();
-            imgOneIncorrect();
-            incrementScore();
-            setTimeout(runGame, 2000 ,test);
-            setTimeout(imgTwoCorrect, 2000);
-            setTimeout(imgOneIncorrect, 2000);
+            if(!document.querySelector("#img-2").classList.contains("postercorrectanswer")){
+                console.log("You Win");
+                imgTwoCorrect();
+                imgOneIncorrect();
+                incrementScore();
+                setTimeout(runGame, 2000 ,test);
+                setTimeout(imgTwoCorrect, 2000);
+                setTimeout(imgOneIncorrect, 2000);
+            } else { return; }
     
         } else {
-            console.log("You Lose");
-            imgOneCorrect();
-            imgTwoIncorrect();
-            setTimeout(gameOver, 2000);
-            setTimeout(imgOneCorrect, 2000);
-            setTimeout(imgTwoIncorrect, 2000);
-        }
+            if(!document.querySelector("#img-2").classList.contains("posterincorrectanswer")){
+                console.log("You Lose");
+                imgOneCorrect();
+                imgTwoIncorrect();
+                setTimeout(gameOver, 2000);
+                setTimeout(imgOneCorrect, 2000);
+                setTimeout(imgTwoIncorrect, 2000);
+            } else { return; }
+            }
     } else {
         console.log("Something is Horribly wrong.")
     }
@@ -425,11 +428,7 @@ function imgTwoIncorrect(){
     document.querySelector("#img-2").classList.toggle('posterincorrectanswer')
 }
 
-// currently not working
-function disableSpamCheckAnswer(){
-    document.querySelector("#img-1").classList.toggle('quiz-poster-identifier')
-    document.querySelector("#img-2").classList.toggle('quiz-poster-identifier')
-}
+
 
 //Increase correct answer counter
 function incrementScore() {
