@@ -1,89 +1,66 @@
-# Project Title
+# Blockbuster Battle
+ Blockbuster Battle — Guess the Bigger Box Office Hit!
+
+<a href="https://medw4rds.github.io/hackathon-project-1/" target="_blank" style="text-align: center;">Click to view the LIVE site </a> <br>
+(To open in a new tab/ window, press "ctrl" (or ⌘ for Mac) + click on the link) 
 
 ## Overview
 
 ### Purpose
-A brief description of the project's purpose, what it aims to achieve, and the value it provides to the users.  
-**Guidance:** Begin filling out this section during Phase 1: Ideation & Initial Setup. Clearly articulate the main goal of your project, what it aims to achieve, and how it will provide value to your target audience.
+Blockbuster Battle is a fun and interactive movie quiz that challenges users to guess which of two films made more at the box office. The purpose of the game is to entertain movie enthusiasts and casual users alike by testing their knowledge of movie gross earnings. The app aims to provide an engaging experience through visually appealing graphics and an easy-to-use interface, enhancing users' appreciation of cinema and pop culture trivia.
 
 ### Target Audience
-Identify the target audience for your website and explain why this audience will benefit from the project.  
-**Guidance:** Use this section to identify who will benefit from your project and why. This should be informed by your user stories and overall project objectives.
+- Movie Enthusiasts who are interested in testing their knowledge of box office hits. 
+- Trivia Lovers: Quiz enthusiasts looking for a fun, movie-based challenge. 
+- Casual Gamers: Players who enjoy quick, engaging games.
+- Competitive Groups: Friends and family who enjoy competing for the highest score. <br>
+Audience will find value in a simple, engaging, and visually appealing quiz that combines entertainment with an educational aspect of movie grosses.
 
 ## User Stories
 
 ### Must-Have User Stories
-- **User Story 1:** Briefly describe the must-have feature.  
-  **Acceptance Criteria:** List the criteria that define the successful implementation of this user story.
-- **User Story 2:** Briefly describe the must-have feature.  
-  **Acceptance Criteria:** List the criteria that define the successful implementation of this user story.
-
-(Include all prioritized must-have features)  
-**Guidance:** Draft the user stories during Phase 1: Ideation & Initial Setup and update them as you complete Phase 2: Must User Stories Implementation & Testing. Document each must-have feature here along with its acceptance criteria.
+- **User Story 1:** As a user, I want to start a game and be presented with two movies to compare. <br>
+  **Acceptance Criteria:** Upon starting the game, two random movie posters appear. The clickable posters allows users to choose which movie earned more. 
+- **User Story 2:** As a user, I want to see my score updated after each guess.<br>
+  **Acceptance Criteria:** After each guess, users are shown, if they are correct, their real-time cumulative score.
 
 ### Should-Have User Stories
-- **User Story 1:** Briefly describe the should-have feature.  
-  **Acceptance Criteria:** List the criteria that define the successful implementation of this user story.
-- **User Story 2:** Briefly describe the should-have feature.  
-  **Acceptance Criteria:** List the criteria that define the successful implementation of this user story.
-
-(Include all prioritized should-have features)  
-**Guidance:** Document the secondary features that you aim to implement in Phase 3: Should User Stories Implementation & Any Advanced Features. Include clear acceptance criteria for each.
+- **User Story 1:** As a user, I want to create my username to view my name with my scores.<br>
+  **Acceptance Criteria:** Users can type in a username and save their scores to compare with others or bet their last best score.
 
 ### Could-Have User Stories
-- **User Story 1:** Briefly describe the could-have feature.  
-  **Acceptance Criteria:** List the criteria that define the successful implementation of this user story.
-- **User Story 2:** Briefly describe the could-have feature.  
-  **Acceptance Criteria:** List the criteria that define the successful implementation of this user story.
 
-(Include any could-have features considered for future enhancements)  
-**Guidance:** Document any optional features that are nice to have but not essential.
+- **User Story 1:** As a user, I want a leaderboard to view my ranking against others.<br>
+  **Acceptance Criteria:** A leaderboard tracks top scores and is updated when users reach top-5 high scores.
 
 ## Design Decisions
 
 ### Wireframes
-Include wireframes for key sections of your website.  
-Briefly describe the design choices, including layout, colour schemes, and fonts.  
-**Guidance:** Start this section during Phase 1: Ideation & Initial Setup and update it throughout Phase 2 and Phase 3. Include digital wireframes created in Phase 1. Document the reasoning behind your layout choices, colour schemes, and font selections.
+![wireframe.png](assets/images/wireframe.PNG)
 
 ### Accessibility Considerations
-Discuss how accessibility guidelines were adhered to, including colour contrast and alt text for images.  
-**Guidance:** Outline how you've incorporated accessibility into your design, ensuring that your project adheres to guidelines such as WCAG.
+Color Scheme: A dark background with vibrant movie poster images for contrast, enhancing readability and visual appeal. <br>
+Fonts: SFMoviePoster-Bold, adding a bold, cinematic feel.<br>
+Other Accessibility Consideration: Alt text added to images.
 
 ## AI Tools Usage
-
-### DALL-E
-Describe how DALL-E was used for image generation, including examples of successes and challenges.  
-**Guidance:** Specifically mention how you used DALL-E for image generation and the impact this had on your design process.
+- ChatGPT for some of the movie content. 
+- Freepik for AI-image generation
+- Adobe Fresco & Canva for image editing
+- Adobe Express for image resizing
 
 ## Features Implementation
 
 ### Core Features (Must-Haves)
-- **Feature 1:** Description of the implemented feature.
-- **Feature 2:** Description of the implemented feature.
-
-(Include all must-have features)  
-**Guidance:** Use this section as you complete Phase 2: Must User Stories Implementation & Testing. Document all the must-have features you implemented, explaining how they align with the user stories and acceptance criteria.
+- **Feature 1:** Two-movie comparison game interface, allowing users to pick the higher-grossing movie.
+- **Feature 2:** Score tracking after each guess, users see if they were correct and get an instant score update.
 
 ### Advanced Features (Should-Haves)
-- **Feature 1:** Description of the implemented feature.
-- **Feature 2:** Description of the implemented feature.
-
-(Include all should-have features)  
-**Guidance:** Include any advanced features you implemented during Phase 3: Should User Stories Implementation & Any Advanced Features. Explain how these features enhance user experience and their alignment with the acceptance criteria.
+- **Feature 1:** Users enter a username that displays with their score.
 
 ### Optional Features (Could-Haves)
-- **Feature 1:** Description of the implemented feature (if any).
-- **Feature 2:** Description of the implemented feature (if any).
+- **Feature 1:** A leaderboard displays the top 5 scores, allowing users to view their ranking and compare with others.
 
-(Include any could-have features that were implemented or considered)  
-**Guidance:** If any could-have features were implemented, describe them here. This is an opportunity to showcase extra work done beyond the initial scope. But remember - keep it simple! Focus on the Must stories first. Could user story features are commonly earmarked for future project iterations.
-
-## AI Tools Usage
-
-### GitHub Copilot
-Describe how GitHub Copilot assisted in coding, including any challenges or adjustments needed.  
-**Guidance:** Reflect on how GitHub Copilot assisted in coding, particularly any challenges or adjustments that were needed to align with project goals.
 
 ## Testing and Validation
 
@@ -97,18 +74,10 @@ Discuss the validation process for HTML and CSS using W3C and Jigsaw validators.
 Include the results of the validation process.  
 **Guidance:** Document your use of W3C and Jigsaw validators to ensure your HTML and CSS meet web standards. Include any errors or warnings encountered and how they were resolved.
 
-## AI Tools Usage
-
-### GitHub Copilot
-Brief reflection on the effectiveness of using AI tools for debugging and validation.  
-**Guidance:** Reflect on how GitHub Copilot assisted with debugging and validation, particularly any issues it helped resolve.
-
 ## Deployment
 
 ### Deployment Process
-Briefly describe the deployment process to GitHub Pages or another cloud platform.  
-Mention any specific challenges encountered during deployment.  
-**Guidance:** Describe the steps you took to deploy your website during Phase 4: Final Testing, Debugging & Deployment, including any challenges encountered.
+The project was deployed on GitHub Pages.
 
 ## AI Tools Usage
 
