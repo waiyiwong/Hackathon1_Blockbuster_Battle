@@ -1,2 +1,26 @@
 @import url(index-style.css);
 @import url(quiz-style.css);
+
+/* Navbar */
+.wai-nav-bg {
+    background-color: black;
+}
+.wai-nav-text {
+    font-weight: bold;
+    color: white;
+    font-size: larger;
+}
+.navbar {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Main on homepage */
+.wai-main-bg {
+    background-color: black;
+    background: url('../images/bg_leader.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
