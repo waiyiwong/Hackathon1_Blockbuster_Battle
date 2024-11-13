@@ -19,7 +19,7 @@
 
 <body>
 
-    <header>
+
 
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -32,49 +32,54 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="quiz.html"><p class="wai-nav-text">Play Now</p></a>
+                            <a class="nav-link active" aria-current="page" href="quiz.html">
+                                <p class="wai-nav-text">Play Now</p>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active wai-nav-text" href="#" data-bs-toggle="modal" data-bs-target="#feedback_modal"><p class="wai-nav-text">Feedback</p></a>
+                            <a class="nav-link active wai-nav-text" href="#" data-bs-toggle="modal"
+                                data-bs-target="#feedback_modal">
+                                <p class="wai-nav-text">Feedback</p>
+                            </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-        <div class="container-fluid">
-            <h1 class="text-center">Movie Quiz</h1>
-            <input type="text" name="username" id="username">
-        </div>
-    </header>
+
+
 
     <main>
-
-    <div class="container" id="question-area">
+        <div class="container-fluid top-banner">
+            <h1 class="text-center title">Movie Quiz</h1>
+            <input type="text" name="username" id="username">
+        </div>
         <div class="container" id="question-area">
-            <div class="row">
-                <div id="answer-1" class="col-5 quiz-poster-identifier">
-                    <div id="img-1" class="poster-container">
-                        <img src=""></img>
+            <div class="container" id="question-area">
+                <div class="row">
+                    <div id="answer-1" class="col-5 quiz-poster-identifier">
+                        <div id="img-1" class="poster-container">
+                            <img src=""></img>
+                        </div>
+                        <p id="movie1" data-type="choice1">movie1</p>
+                        <span id="movie-value-1" class="">Number</span>
                     </div>
-                    <p id="movie1" data-type="choice1">movie1</p>
-                    <span id="movie-value-1" class="">Number</span>
-                </div>
-                <div id="greater-than" class="col-2">
-                    <button id="restart-game" class="display-none">Restart Game</button>
-                </div>
-                <div id="answer-2" class="col-5 quiz-poster-identifier">
-                    <div id="img-2" class="poster-container">
+                    <div id="greater-than" class="col-2">
+                        <button id="restart-game" class="display-none">Restart Game</button>
                     </div>
-                    <p id="movie2" data-type="choice2">movie2</p>
-                    <span id="movie-value-2" class="">Number</span>
+                    <div id="answer-2" class="col-5 quiz-poster-identifier">
+                        <div id="img-2" class="poster-container">
+                        </div>
+                        <p id="movie2" data-type="choice2">movie2</p>
+                        <span id="movie-value-2" class="">Number</span>
+                    </div>
                 </div>
             </div>
+            <div class="score-area">
+                <p class="scores display-none">Correct Answers <span id="score">0</span></p>
+            </div>
         </div>
-        <div class="score-area">
-            <p class="scores display-none">Correct Answers <span id="score">0</span></p>
-        </div>
-    </div>
     </main>
 
     <footer>
