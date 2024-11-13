@@ -109,7 +109,7 @@ const test = [{
 {
     name: "Harry Potter and the Deathly Hallows: Part 2",
     value: 1342480797,
-    img: "deathly-hallows-2",
+    img: "deathly-hallows-2.jpg",
     date: 2011,
 },
 {
@@ -324,13 +324,14 @@ const FILM_2_LS_KEY = "film2";
 const USER_USERNAME_LS_KEY = "userUserName";
 const USER_HIGHSCORE_LS_KEY = "userHighScore";
 
-
+// Here to ensure USER_HIGHSCORE_LS_KEY has a value atleast once so it doesn't return undefined or overwrite itself
 function isHighScoreNumber() {
     if(!localStorage.getItem(USER_HIGHSCORE_LS_KEY)){
         localStorage.setItem(USER_HIGHSCORE_LS_KEY,0)
     }
 }
 
+// generate two random numbers and ensure the second isn't equal to the first then run display.
 function runGame(arr) {
 
     let num1 = Math.floor(Math.random() * arr.length);
@@ -346,10 +347,15 @@ function displayQuiz(number1, number2) {
 
     movieOne.textContent = test[number1].name;
     localStorage.setItem(FILM_1_LS_KEY, number1);
+    let imageLoc1 = test[number1].img;
+    let imgOne = document.querySelector("#img-1")
+    imgOne.innerHTML = `<img src="assets/images/posters/${imageLoc1}" class="poster"></img>`;
 
     movieTwo.textContent = test[number2].name;
     localStorage.setItem(FILM_2_LS_KEY, number2)
-
+    let imageLoc2 = test[number2].img;
+    let imgTwo = document.querySelector("#img-2")
+    imgTwo.innerHTML = `<img src="assets/images/posters/${imageLoc2}" class="poster"></img>`;
 }
 
 // Check answer for left side button
@@ -409,7 +415,7 @@ function gameOver() {
     document.querySelector(".scores").classList.toggle("display-none")
     document.querySelector("#restart-game").classList.toggle("display-none")
     let score = document.querySelector("#score").innerText
-    let username = document.querySelector("#username").innerText
+    let username = document.querySelector("#username").value
     localStorage.setItem(USER_USERNAME_LS_KEY,username)
     if(parseInt(localStorage.getItem(USER_HIGHSCORE_LS_KEY)) < score){
         localStorage.setItem(USER_HIGHSCORE_LS_KEY,score)
