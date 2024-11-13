@@ -2,6 +2,12 @@
     font-family: "SFMoviePoster-Bold";
     src: url("/assets/fonts/SFMoviePoster-Bold.ttf") format("truetype");
 }
+
+@font-face {
+    font-family: "SFMoviePoster";
+    src: url("/assets/fonts/SFMoviePoster.ttf") format("truetype");
+}
+
 main {
     background-color: rgb(25, 28, 32);
     color: rgb(255, 255, 240);
@@ -17,6 +23,22 @@ main {
     border: 5px solid rgb(255, 255, 240);
 }
 
+.poster:hover {
+    border: 5px solid rgba(9, 255, 0, 0.75);
+}
+
 #question-area {
    padding-top: 10px;
+}
+
+#movie1 {
+    font-family: "SFMoviePoster";
+    font-size: 350%;
+    text-align: center;
+}
+
+#movie2 {
+    font-family: "SFMoviePoster";
+    font-size: 350%;
+    text-align: center;
 }
