@@ -25,6 +25,7 @@
     height: 100vh;
 }
 
-.class {
-
-};
+/* Modal feedback styling  */
+.modal-content {
+    background-color: black !important;
+}
