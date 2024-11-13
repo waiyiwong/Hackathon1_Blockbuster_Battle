@@ -24,7 +24,15 @@ main {
 }
 
 .poster:hover {
-    border: 5px solid rgba(9, 255, 0, 0.75);
+    border: 5px solid rgb(150, 150, 150);
+}
+
+.postercorrectanswer {
+    border: 5px solid rgba(0, 255, 0, 0.75);
+}
+
+.posterincorrectanswer {
+    border: 5px solid rgba(255, 0, 0, 0.75);
 }
 
 #question-area {
