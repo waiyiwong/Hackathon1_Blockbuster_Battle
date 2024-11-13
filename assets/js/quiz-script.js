@@ -302,12 +302,10 @@ const test = [{
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    movieOne.addEventListener("click", function () {
+    quizPoster.addEventListener("click", function () {
         checkAnswer()
     });
-    movieTwo.addEventListener("click", function () {
-        checkAnswer2()
-    });
+    
     document.querySelector("#restart-game").addEventListener("click", function () {
         retryGame();
     });
@@ -317,8 +315,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const currentUser = document.querySelector("#username").value
-const movieOne = document.querySelector("#answer-1")
-const movieTwo = document.querySelector("#answer-2")
+const quizPoster = document.querySelector(".quiz-poster-identifier")
 const FILM_1_LS_KEY = "film1";
 const FILM_2_LS_KEY = "film2";
 const USER_USERNAME_LS_KEY = "userUserName";
@@ -351,19 +348,22 @@ function displayQuiz(number1, number2) {
     let imgOne = document.querySelector("#img-1")
     imgOne.innerHTML = `<img src="assets/images/posters/${imageLoc1}" class="poster"></img>`;
 
+
+
     document.querySelector("#movie2").textContent = test[number2].name;
     localStorage.setItem(FILM_2_LS_KEY, number2)
     let imageLoc2 = test[number2].img;
     let imgTwo = document.querySelector("#img-2")
     imgTwo.innerHTML = `<img src="assets/images/posters/${imageLoc2}" class="poster"></img>`;
+
 }
 
-// Check answer for left side button
+// Check answer for selected
 function checkAnswer() {
     let button1 = parseInt(localStorage.getItem(FILM_1_LS_KEY));
     let button2 = parseInt(localStorage.getItem(FILM_2_LS_KEY));
 
-
+    if(quizPoster.getAttribute("data-type") == "choice1"){
     if (test[button1].value > test[button2].value) {
         console.log("You Win")
         runGame(test);
@@ -371,31 +371,25 @@ function checkAnswer() {
 
     } else {
         console.log("You Lose")
-        runGame(test);
         gameOver();
     }
-
-}
-
-// Check answer for right side button
-function checkAnswer2() {
-    let button1 = parseInt(localStorage.getItem(FILM_1_LS_KEY));
-    let button2 = parseInt(localStorage.getItem(FILM_2_LS_KEY));
-
-    if (test[button2].value > test[button1].value) {
-        console.log(test[button1].value)
-        console.log(test[button2].value)
-        console.log("You Win")
-        runGame(test);
-        incrementScore();
-
-    } else {
-        console.log("You Lose")
-        runGame(test);
-        gameOver();
     }
 
+    if(quizPoster.getAttribute("data-type") == "choice2"){
+        if (test[button2].value > test[button1].value) {
+            console.log(test[button1].value)
+            console.log(test[button2].value)
+            console.log("You Win")
+            runGame(test);
+            incrementScore();
+    
+        } else {
+            console.log("You Lose")
+            gameOver();
+        }
+    }
 }
+
 
 //Increase correct answer counter
 function incrementScore() {
@@ -407,13 +401,10 @@ function incrementScore() {
 
 // Toggle display none on front elements and show the restart game screen
 function gameOver() {
-
-    movieOne.classList.toggle("display-none")
-    movieTwo.classList.toggle("display-none")
-    document.querySelector("#movie-value-1").classList.toggle("display-none")
-    document.querySelector("#movie-value-2").classList.toggle("display-none")
+    
+    document.querySelector("#game-over").classList.toggle("display-none")
     document.querySelector(".scores").classList.toggle("display-none")
-    document.querySelector("#restart-game").classList.toggle("display-none")
+    document.querySelector("#question-area").classList.toggle("display-none")
     let score = document.querySelector("#score").innerText
     let username = document.querySelector("#username").value
     localStorage.setItem(USER_USERNAME_LS_KEY, username)
@@ -425,15 +416,13 @@ function gameOver() {
 
 //Toggle classes again to return to original state, set correct answer counter to 0, run game again.
 function retryGame() {
+
     function displayToggle(){
     document.querySelector("#score").innerText = 0;
-    movieOne.classList.toggle("display-none")
-    movieTwo.classList.toggle("display-none")
-    document.querySelector("#movie-value-1").classList.toggle("display-none")
-    document.querySelector("#movie-value-2").classList.toggle("display-none")
+    document.querySelector("#game-over").classList.toggle("display-none")
     document.querySelector(".scores").classList.toggle("display-none")
-    document.querySelector("#restart-game").classList.toggle("display-none")
+    document.querySelector("#question-area").classList.toggle("display-none")
     }
     displayToggle();
-    setTimeout(runGame, 4000, test);
+    setTimeout(runGame(test), 4000);
 }

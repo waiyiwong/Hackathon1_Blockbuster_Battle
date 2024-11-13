@@ -55,26 +55,28 @@
             <h1 class="text-center title">Movie Quiz</h1>
             <input type="text" name="username" id="username">
         </div>
-        <div class="container" id="question-area">
+        <div class="container">
             <div class="container" id="question-area">
                 <div class="row">
-                    <div id="answer-1" class="col-5 quiz-poster-identifier">
+                    <div id="answer-1" data-type="choice1" class="col-5 quiz-poster-identifier">
                         <div id="img-1" class="poster-container">
                             <img src=""></img>
                         </div>
-                        <p id="movie1" data-type="choice1">movie1</p>
+                        <p id="movie1">movie1</p>
                         <span id="movie-value-1" class="">Number</span>
                     </div>
-                    <div id="greater-than" class="col-2">
-                        <button id="restart-game" class="display-none">Restart Game</button>
+                    <div class="col-2">
                     </div>
-                    <div id="answer-2" class="col-5 quiz-poster-identifier">
+                    <div id="answer-2" data-type="choice2" class="col-5 quiz-poster-identifier">
                         <div id="img-2" class="poster-container">
                         </div>
-                        <p id="movie2" data-type="choice2">movie2</p>
+                        <p id="movie2">movie2</p>
                         <span id="movie-value-2" class="">Number</span>
                     </div>
                 </div>
+            </div>
+            <div id="game-over" class="display-none">
+                <button id="restart-game">Restart Game</button>
             </div>
             <div class="score-area">
                 <p class="scores display-none">Correct Answers <span id="score">0</span></p>
