@@ -360,14 +360,30 @@ function displayQuiz(number1, number2) {
 function checkAnswer(e) {
     let button1 = parseInt(localStorage.getItem(FILM_1_LS_KEY));
     let button2 = parseInt(localStorage.getItem(FILM_2_LS_KEY));
+    
+    function setMovieValue(){
+    document.querySelector("#movie-value-1").innerText = test[button1].value;
+    document.querySelector("#movie-value-2").innerText = test[button2].value;
+    document.querySelector("#movie-value-1").classList.toggle("display-none");
+    document.querySelector("#movie-value-2").classList.toggle("display-none");
+    }
+
+    function removeMovieValue(){
+        document.querySelector("#movie-value-1").innerText = 0;
+        document.querySelector("#movie-value-2").innerText = 0;
+        document.querySelector("#movie-value-1").classList.toggle("display-none");
+        document.querySelector("#movie-value-2").classList.toggle("display-none");
+    }
 
     if (e.currentTarget.getAttribute("data-type") == "choice1"){
         if (test[button1].value > test[button2].value) {
             if(!document.querySelector("#img-1").classList.contains("postercorrectanswer")){
                 console.log("You Win");
+                setMovieValue();
                 imgOneCorrect();
                 imgTwoIncorrect();
                 incrementScore();
+                setTimeout(removeMovieValue, 2000);
                 setTimeout(runGame, 2000 ,test);
                 setTimeout(imgOneCorrect, 2000);
                 setTimeout(imgTwoIncorrect, 2000);
@@ -377,8 +393,10 @@ function checkAnswer(e) {
         } else {
             if(!document.querySelector("#img-1").classList.contains("posterincorrectanswer")){
                 console.log("You Lose");
+                setMovieValue();
                 imgTwoCorrect();
                 imgOneIncorrect();
+                setTimeout(removeMovieValue, 2000);
                 setTimeout(gameOver, 2000);
                 setTimeout(imgTwoCorrect, 2000);
                 setTimeout(imgOneIncorrect, 2000);
@@ -389,9 +407,11 @@ function checkAnswer(e) {
         if (test[button2].value > test[button1].value) {
             if(!document.querySelector("#img-2").classList.contains("postercorrectanswer")){
                 console.log("You Win");
+                setMovieValue();
                 imgTwoCorrect();
                 imgOneIncorrect();
                 incrementScore();
+                setTimeout(removeMovieValue, 2000);
                 setTimeout(runGame, 2000 ,test);
                 setTimeout(imgTwoCorrect, 2000);
                 setTimeout(imgOneIncorrect, 2000);
@@ -400,8 +420,10 @@ function checkAnswer(e) {
         } else {
             if(!document.querySelector("#img-2").classList.contains("posterincorrectanswer")){
                 console.log("You Lose");
+                setMovieValue();
                 imgOneCorrect();
                 imgTwoIncorrect();
+                setTimeout(removeMovieValue, 2000);
                 setTimeout(gameOver, 2000);
                 setTimeout(imgOneCorrect, 2000);
                 setTimeout(imgTwoIncorrect, 2000);
@@ -452,17 +474,19 @@ function gameOver() {
     }
 }
 
-
 //Toggle classes again to return to original state, set correct answer counter to 0, run game again.
 function retryGame() {
-
-    setTimeout(displayToggle, 1000);
-    setTimeout(runGame, 1000 ,test);
+    if(!document.querySelector("#game-over").classList.contains("placeholder")){
+        setTimeout(displayToggle, 1000);
+        setTimeout(runGame, 1000 ,test);
+        document.querySelector("#game-over").classList.add("placeholder")
+    }
 }
 
 function displayToggle(){
+    document.querySelector("#game-over").classList.toggle("placeholder")
     document.querySelector("#score").innerText = 0;
-    document.querySelector("#game-over").classList.toggle("display-none")
     document.querySelector(".scores").classList.toggle("display-none")
     document.querySelector("#question-area").classList.toggle("display-none")
+    document.querySelector("#game-over").classList.remove("placeholder")
 };
