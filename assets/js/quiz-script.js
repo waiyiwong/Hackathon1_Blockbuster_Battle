@@ -302,13 +302,8 @@ const test = [{
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    quizPoster.addEventListener("click", function () {
-        checkAnswer()
-    });
-    
-    document.querySelector("#restart-game").addEventListener("click", function () {
-        retryGame();
-    });
+    quizPoster.addEventListener("click", (e) => checkAnswer(e));
+    document.querySelector("#restart-game").addEventListener("click" , retryGame);
 
     isHighScoreNumber();
     runGame(test);
@@ -359,36 +354,42 @@ function displayQuiz(number1, number2) {
 }
 
 // Check answer for selected
-function checkAnswer() {
+function checkAnswer(e) {
     let button1 = parseInt(localStorage.getItem(FILM_1_LS_KEY));
     let button2 = parseInt(localStorage.getItem(FILM_2_LS_KEY));
 
-    if(quizPoster.getAttribute("data-type") == "choice1"){
-    if (test[button1].value > test[button2].value) {
-        console.log("You Win")
-        runGame(test);
-        incrementScore();
+    if(e.currentTarget.getAttribute("data-type") == "choice1"){
+        if (test[button1].value > test[button2].value) {
+            console.log("You Win");
+            runGame(test);
+            incrementScore();
 
-    } else {
-        console.log("You Lose")
-        gameOver();
-    }
+        } else {
+            console.log("You Lose");
+            gameOver();
+        }
     }
 
-    if(quizPoster.getAttribute("data-type") == "choice2"){
+    if(e.currentTarget.getAttribute("data-type") == "choice2"){
         if (test[button2].value > test[button1].value) {
-            console.log(test[button1].value)
-            console.log(test[button2].value)
-            console.log("You Win")
+            console.log(test[button1].value);
+            console.log(test[button2].value);
+            console.log("You Win");
             runGame(test);
             incrementScore();
     
         } else {
-            console.log("You Lose")
+            console.log("You Lose");
             gameOver();
         }
     }
 }
+
+//show correct answer and values
+function showCorrectAnswerOutline(){
+    this.classList.add("")
+}
+
 
 
 //Increase correct answer counter
@@ -417,12 +418,13 @@ function gameOver() {
 //Toggle classes again to return to original state, set correct answer counter to 0, run game again.
 function retryGame() {
 
-    function displayToggle(){
+    setTimeout(displayToggle, 1000);
+    setTimeout(runGame, 1000 ,test);
+}
+
+function displayToggle(){
     document.querySelector("#score").innerText = 0;
     document.querySelector("#game-over").classList.toggle("display-none")
     document.querySelector(".scores").classList.toggle("display-none")
     document.querySelector("#question-area").classList.toggle("display-none")
-    }
-    displayToggle();
-    setTimeout(runGame(test), 4000);
-}
+};
