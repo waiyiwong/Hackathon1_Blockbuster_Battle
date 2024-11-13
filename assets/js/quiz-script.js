@@ -302,15 +302,18 @@ const test = [{
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    quizPoster.addEventListener("click", (e) => checkAnswer(e));
-    document.querySelector("#restart-game").addEventListener("click" , retryGame);
+    for(let posters of quizPoster){
+        posters.addEventListener("click", (e) => checkAnswer(e));
+    };
 
+    document.querySelector("#restart-game").addEventListener("click" , retryGame);
+    
     isHighScoreNumber();
     runGame(test);
 });
 
+const quizPoster = document.querySelectorAll(".quiz-poster-identifier")
 const currentUser = document.querySelector("#username").value
-const quizPoster = document.querySelector(".quiz-poster-identifier")
 const FILM_1_LS_KEY = "film1";
 const FILM_2_LS_KEY = "film2";
 const USER_USERNAME_LS_KEY = "userUserName";
@@ -358,39 +361,75 @@ function checkAnswer(e) {
     let button1 = parseInt(localStorage.getItem(FILM_1_LS_KEY));
     let button2 = parseInt(localStorage.getItem(FILM_2_LS_KEY));
 
-    if(e.currentTarget.getAttribute("data-type") == "choice1"){
+    if (e.currentTarget.getAttribute("data-type") == "choice1"){
         if (test[button1].value > test[button2].value) {
             console.log("You Win");
-            runGame(test);
+            disableSpamCheckAnswer();
+            imgOneCorrect();
+            imgTwoIncorrect();
+            // setTimeout(disableSpamCheckAnswer, 4000);
+            setTimeout(runGame, 2000 ,test);
             incrementScore();
+            setTimeout(imgOneCorrect, 2000);
+            setTimeout(imgTwoIncorrect, 2000);
+
 
         } else {
             console.log("You Lose");
-            gameOver();
-        }
-    }
+            disableSpamCheckAnswer();
+            imgTwoCorrect();
+            imgOneIncorrect();
 
-    if(e.currentTarget.getAttribute("data-type") == "choice2"){
+            setTimeout(disableSpamCheckAnswer, 2000);
+            setTimeout(gameOver, 2000);
+            setTimeout(imgTwoCorrect, 2000);
+            setTimeout(imgOneIncorrect, 2000);
+
+        }
+    } else if (e.currentTarget.getAttribute("data-type") == "choice2"){
         if (test[button2].value > test[button1].value) {
-            console.log(test[button1].value);
-            console.log(test[button2].value);
             console.log("You Win");
-            runGame(test);
+            imgTwoCorrect();
+            imgOneIncorrect();
             incrementScore();
+            setTimeout(runGame, 2000 ,test);
+            setTimeout(imgTwoCorrect, 2000);
+            setTimeout(imgOneIncorrect, 2000);
     
         } else {
             console.log("You Lose");
-            gameOver();
+            imgOneCorrect();
+            imgTwoIncorrect();
+            setTimeout(gameOver, 2000);
+            setTimeout(imgOneCorrect, 2000);
+            setTimeout(imgTwoIncorrect, 2000);
         }
+    } else {
+        console.log("Something is Horribly wrong.")
     }
 }
 
-//show correct answer and values
-function showCorrectAnswerOutline(){
-    this.classList.add("")
+// to toggle classes for borders
+function imgOneCorrect(){
+    document.querySelector("#img-1").classList.toggle('postercorrectanswer')
 }
 
+function imgOneIncorrect(){
+    document.querySelector("#img-1").classList.toggle('posterincorrectanswer')
+}
+function imgTwoCorrect(){
+    document.querySelector("#img-2").classList.toggle('postercorrectanswer')
+}
 
+function imgTwoIncorrect(){
+    document.querySelector("#img-2").classList.toggle('posterincorrectanswer')
+}
+
+// currently not working
+function disableSpamCheckAnswer(){
+    document.querySelector("#img-1").classList.toggle('quiz-poster-identifier')
+    document.querySelector("#img-2").classList.toggle('quiz-poster-identifier')
+}
 
 //Increase correct answer counter
 function incrementScore() {
