@@ -22,21 +22,33 @@
     <header>
         <div class="container-fluid">
             <h1 class="text-center">Movie Quiz</h1>
-            <p id="username">username</p>
+            <input type="text" name="username" id="username">
         </div>
     </header>
-
-    <div class="container" id="question-area">
-        <div class="row">
-            <div id="answer-1" class="col-5"><button id="movie1" data-type="choice1">movie1</button><span id="movie-value-1">Number</span></div>
-            <div id="greater-than" class="col-2">
-                <button id="restart-game" class="display-none">Restart Game</button>
+    <div class="gameArea">
+        <div class="container" id="question-area">
+            <div class="row">
+                <div id="answer-1" class="col-5">
+                    <div id="img-1" class="poster-container">
+                        <img src=""></img>
+                    </div>
+                    <button id="movie1" data-type="choice1">movie1</button>
+                    <span id="movie-value-1" class="display-none">Number</span>
+                </div>
+                <div id="greater-than" class="col-2">
+                    <button id="restart-game" class="display-none">Restart Game</button>
+                </div>
+                <div id="answer-2" class="col-5">
+                    <div id="img-2" class="poster-container">
+                    </div>
+                    <button id="movie2" data-type="choice2">movie2</button>
+                    <span id="movie-value-2" class="display-none">Number</span>
+                </div>
             </div>
-            <div id="answer-2" class="col-5"><button id="movie2" data-type="choice2">movie2</button><span id="movie-value-2">Number</span></div>
         </div>
-    </div>
-    <div class="score-area">
-        <p class="scores display-none">Correct Answers <span id="score">0</span></p>
+        <div class="score-area">
+            <p class="scores display-none">Correct Answers <span id="score">0</span></p>
+        </div>
     </div>
 
     <footer>
