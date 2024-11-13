@@ -18,11 +18,15 @@
 /* Main on homepage */
 .wai-main-bg {
     background-color: black;
-    background: url('../images/bg_leader.png');
+    background: url('../images/bg_leader3.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+}
+.wai-hr {
+    width: 25%;
+    margin: auto;
 }
 
 /* Modal feedback styling  */
