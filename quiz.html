@@ -14,7 +14,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="MyWebSite" />
     <link rel="manifest" href="favicon/site.webmanifest" />
-    <title>Movie Quiz | Quiz</title>
+    <title>Blockbuster Battle | Quiz</title>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid wai-nav-bg">
-                <a class="navbar-brand" href="index.html"><img src="assets/images/bb_logo.png" height="80"></a>
+                <a class="navbar-brand" href="index.html"><img src="assets/images/bb_logo.png" height="60"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon navbar-dark"></span>
@@ -50,22 +50,20 @@
 
     <main>
         <div class="container-fluid top-banner">
-            <h1 class="text-center title">Movie Quiz</h1>
-            <input type="text" name="username" id="username">
+            <h2 class="text-center title">Pick the movie with the bigger box office hit!</h2>
+            <p class="text-center">Your name: <input type="text" name="username" id="username"></p>
         </div>
         <div class="container">
             <div class="container" id="question-area">
                 <div class="row">
-                    <div id="answer-1" class="col-5">
+                    <div id="answer-1" class="col-6">
                         <div id="img-1" data-type="choice1" class="poster-container quiz-poster-identifier">
                             <img src=""></img>
                         </div>
                         <p id="movie1">movie1</p>
                         <span id="movie-value-1" class="display-none">Number</span>
                     </div>
-                    <div class="col-2">
-                    </div>
-                    <div id="answer-2" class="col-5 ">
+                    <div id="answer-2" class="col-6">
                         <div id="img-2" data-type="choice2" class="poster-container quiz-poster-identifier">
                         </div>
                         <p id="movie2">movie2</p>
@@ -73,11 +71,11 @@
                     </div>
                 </div>
             </div>
-            <div id="game-over" class="display-none">
+            <div id="game-over" class="display-none text-center">
                 <button id="restart-game">Restart Game</button>
             </div>
             <div class="score-area">
-                <p class="scores display-none">Correct Answers <span id="score">0</span></p>
+                <h3 class="scores display-none text-center">Correct Answers <span id="score">0</span></h3>
             </div>
         </div>
 

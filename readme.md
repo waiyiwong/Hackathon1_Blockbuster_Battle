@@ -1,5 +1,5 @@
-# Blockbuster Bet
- Blockbuster Bet — Guess the Bigger Box Office Hit!
+# Blockbuster Battle
+ Blockbuster Battle — Guess the Bigger Box Office Hit!
 
 <a href="https://medw4rds.github.io/hackathon-project-1/" target="_blank" style="text-align: center;">Click to view the LIVE site </a> <br>
 (To open in a new tab/ window, press "ctrl" (or ⌘ for Mac) + click on the link) 
@@ -7,7 +7,7 @@
 ## Overview
 
 ### Purpose
-Blockbuster Bet is a fun and interactive movie quiz that challenges users to guess which of two films made more at the box office. The purpose of the game is to entertain movie enthusiasts and casual users alike by testing their knowledge of movie gross earnings. The app aims to provide an engaging experience through visually appealing graphics and an easy-to-use interface, enhancing users' appreciation of cinema and pop culture trivia.
+Blockbuster Battle is a fun and interactive movie quiz that challenges users to guess which of two films made more at the box office. The purpose of the game is to entertain movie enthusiasts and casual users alike by testing their knowledge of movie gross earnings. The app aims to provide an engaging experience through visually appealing graphics and an easy-to-use interface, enhancing users' appreciation of cinema and pop culture trivia.
 
 ### Target Audience
 - Movie Enthusiasts who are interested in testing their knowledge of box office hits. 
@@ -26,7 +26,7 @@ Audience will find value in a simple, engaging, and visually appealing quiz that
 
 ### Should-Have User Stories
 - **User Story 1:** As a user, I want to create my username to view my name with my scores.<br>
-  **Acceptance Criteria:** Users can type in a username and save their scores to compare with others or bet their last best score.
+  **Acceptance Criteria:** Users can type in a username and save their scores to compare with others or beat their last best score.
 
 ### Could-Have User Stories
 
