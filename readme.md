@@ -1,6 +1,6 @@
 # Blockbuster Battle
  Blockbuster Battle — Guess the Bigger Box Office Hit!
-
+![responsive.png](assets/images/responsive.png)
 <a href="https://medw4rds.github.io/hackathon-project-1/" target="_blank" style="text-align: center;">Click to view the LIVE site </a> <br>
 (To open in a new tab/ window, press "ctrl" (or ⌘ for Mac) + click on the link) 
 
@@ -64,15 +64,9 @@ Other Accessibility Consideration: Alt text added to images.
 
 ## Testing and Validation
 
-### Testing Results
-Summarize the results of testing across different devices and screen sizes.  
-Mention any issues found and how they were resolved.  
-**Guidance:** Summarize the results of your testing across various devices using tools like Chrome DevTools, as outlined in Phase 2. Mention any issues found and how they were resolved.
-
-### Validation
-Discuss the validation process for HTML and CSS using W3C and Jigsaw validators.  
-Include the results of the validation process.  
-**Guidance:** Document your use of W3C and Jigsaw validators to ensure your HTML and CSS meet web standards. Include any errors or warnings encountered and how they were resolved.
+### Testing & Validation Results
+![html validation.png](assets/images/html_validation.png)
+![css validation.png](assets/images/css_validation.png)
 
 ## Deployment
 
