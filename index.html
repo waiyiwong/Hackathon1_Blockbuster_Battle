@@ -14,7 +14,10 @@
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="MyWebSite" />
     <link rel="manifest" href="favicon/site.webmanifest" />
-    <title>Movie Quiz | Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Blockbuster Battle | Home</title>
 </head>
 
 <body>
@@ -45,17 +48,19 @@
     </header>
   
     <main class="wai-main-bg">
+        <div class="container-fluid wai-leaderboard">
         <div class="text-center">
-            <h1 class="title">Movie Quiz</h1>
-            <h2>Which Movie had a higher box-office gross?</h2>
-            <h6>Not adjusted for Inflation.</h6>
+            <h1 class="title">BLOCKBUSTER BATTLE</h1>
+            <h3>Guess the Bigger Box Office Hit!</h3>
         </div>
+        <br>
         <div class="container text-center">
             <a class="btn btn-primary" href="quiz.html" role="button">Start Quiz!</a>
         </div>
+        <br>
         <hr class="wai-hr">
         <div>
-            <div class="text-center">Leaderboard</div>
+            <div class="text-center"><h5>Leaderboard</h5></div>
             <div class="container text-center">
                 <div class="row justify-content-md-center">
                     <div class="col col-lg-2">
@@ -68,6 +73,7 @@
                         Score
                     </div>
                 </div>
+                <hr class="wai-hr2">
                 <div class="row justify-content-md-center">
                     <div class="col col-lg-2">
                         1
@@ -127,8 +133,9 @@
         </div>
         <hr class="wai-hr">
         <div class="text-center ">
-            <h1 >Your High Score: <span id="highscore">0</span></h1>
+            <h2>Your Highest Score: <span id="highscore">0</span></h2>
         </div>
+    </div>
 
 
         <!-- Feedback Modal -->

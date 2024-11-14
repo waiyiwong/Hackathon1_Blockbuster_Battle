@@ -23,11 +23,43 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+    width: 100%;
+    position: relative;
 }
 .wai-hr {
     width: 25%;
     margin: auto;
 }
+.wai-hr2 {
+    width: 100%;
+    margin: auto;
+}
+
+.wai-leaderboard {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white; 
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    height: 80vh;
+}
+
+.wai-leaderboard::before {
+    content: ''; 
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: -1; 
+}
+
+.wai-leaderboard h1, .wai-leaderboard h3 {
+    position: relative; 
+    z-index: 1;
+}
+
 
 /* Modal feedback styling  */
 .modal-content {
