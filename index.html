@@ -46,97 +46,62 @@
             </div>
         </nav>
     </header>
-  
+
     <main class="wai-main-bg">
         <div class="container-fluid wai-leaderboard">
         <div class="text-center">
             <h1 class="title">BLOCKBUSTER BATTLE</h1>
             <h3>Guess the Bigger Box Office Hit!</h3>
         </div>
-        <br>
         <div class="container text-center">
             <a class="btn btn-primary" href="quiz.html" role="button">Start Quiz!</a>
         </div>
-        <br>
         <hr class="wai-hr">
-        <div>
-            <div class="text-center"><h5>Leaderboard</h5></div>
-            <div class="container text-center">
-                <div class="row justify-content-md-center">
-                    <div class="col col-lg-2">
-                        #
-                    </div>
-                    <div class="col-md-auto">
-                        Username
-                    </div>
-                    <div class="col col-lg-2">
-                        Score
-                    </div>
-                </div>
-                <hr class="wai-hr2">
-                <div class="row justify-content-md-center">
-                    <div class="col col-lg-2">
-                        1
-                    </div>
-                    <div class="col-md-auto">
-                        Username 3
-                    </div>
-                    <div class="col col-lg-2">
-                        14
-                    </div>
-                </div>
-                <div class="row justify-content-md-center">
-                    <div class="col col-lg-2">
-                        2
-                    </div>
-                    <div class="col-md-auto">
-                        Username 5
-                    </div>
-                    <div class="col col-lg-2">
-                        12
-                    </div>
-                </div>
-                <div class="row justify-content-md-center">
-                    <div class="col col-lg-2">
-                        3
-                    </div>
-                    <div class="col-md-auto">
-                        Username 2
-                    </div>
-                    <div class="col col-lg-2">
-                        9
-                    </div>
-                </div>
-                <div class="row justify-content-md-center">
-                    <div class="col col-lg-2">
-                        4
-                    </div>
-                    <div class="col-md-auto">
-                        Username 6
-                    </div>
-                    <div class="col col-lg-2">
-                        8
-                    </div>
-                </div>
-                <div class="row justify-content-md-center">
-                    <div class="col col-lg-2">
-                        5
-                    </div>
-                    <div class="col-md-auto">
-                        Username 8
-                    </div>
-                    <div class="col col-lg-2">
-                        7
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr class="wai-hr">
-        <div class="text-center ">
-            <h2>Your Highest Score: <span id="highscore">0</span></h2>
-        </div>
+        <div class="text-center"><h5>Leaderboard</h5></div>
+<div class="container text-center">
+    <div class="table-responsive">
+        <table class="table table-bordered table-dark">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Username</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Username 3</td>
+                    <td>14</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Username 5</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Username 2</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Username 6</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Username 8</td>
+                    <td>7</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-
+</div>
+<hr class="wai-hr">
+<div class="text-center">
+    <h2>Your Highest Score: <span id="highscore">0</span></h2>
+</div>
 
         <!-- Feedback Modal -->
         <div class="modal fade" id="feedback_modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">

@@ -37,7 +37,7 @@
 
 .wai-leaderboard {
     position: relative;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.1);
     color: white; 
     padding: 50px 0;
     display: flex;
@@ -51,7 +51,7 @@
 .wai-leaderboard::before {
     content: ''; 
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.1); 
     z-index: -1; 
 }
 
@@ -60,8 +60,21 @@
     z-index: 1;
 }
 
+table {
+    max-width: 28%;
+    margin: auto;
+}
+
 
 /* Modal feedback styling  */
 .modal-content {
     background-color: black !important;
+}
+
+@media (max-width: 768px) {
+    .wai-leaderboard {
+        height: auto; 
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
 }
