@@ -32,7 +32,7 @@ body {
 #answer-1,
 #answer-2 {
     margin: auto;
-    min-width: 258px;
+    /* min-width: 258px; */
 }
 
 .wai-endofgame {
