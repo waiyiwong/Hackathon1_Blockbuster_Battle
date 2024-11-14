@@ -64,6 +64,7 @@ Other Accessibility Consideration: Alt text added to images.
 ## Testing and Validation
 
 ### Testing & Validation Results
+![performance.png](assets/images/lighthouse_score.png)
 ![html validation.png](assets/images/html_validation.png)
 ![css validation.png](assets/images/css_validation.png)
 
