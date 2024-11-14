@@ -302,12 +302,12 @@ const test = [{
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    for(let posters of quizPoster){
+    for (let posters of quizPoster) {
         posters.addEventListener("click", (e) => checkAnswer(e));
     };
 
-    document.querySelector("#restart-game").addEventListener("click" , retryGame);
-    
+    document.querySelector("#restart-game").addEventListener("click", retryGame);
+
     isHighScoreNumber();
     runGame(test);
 });
@@ -360,38 +360,40 @@ function displayQuiz(number1, number2) {
 function checkAnswer(e) {
     let button1 = parseInt(localStorage.getItem(FILM_1_LS_KEY));
     let button2 = parseInt(localStorage.getItem(FILM_2_LS_KEY));
-    
-    function setMovieValue(){
-    document.querySelector("#movie-value-1").innerText = test[button1].value;
-    document.querySelector("#movie-value-2").innerText = test[button2].value;
-    document.querySelector("#movie-value-1").classList.toggle("display-none");
-    document.querySelector("#movie-value-2").classList.toggle("display-none");
+
+    function setMovieValue() {
+        document.querySelector("#movie-value-1").innerText = test[button1].value;
+        document.querySelector("#movie-value-2").innerText = test[button2].value;
+        document.querySelector("#movie-value-1").classList.toggle("display-none");
+        document.querySelector("#movie-value-2").classList.toggle("display-none");
     }
 
-    function removeMovieValue(){
+    function removeMovieValue() {
         document.querySelector("#movie-value-1").innerText = 0;
         document.querySelector("#movie-value-2").innerText = 0;
         document.querySelector("#movie-value-1").classList.toggle("display-none");
         document.querySelector("#movie-value-2").classList.toggle("display-none");
     }
 
-    if (e.currentTarget.getAttribute("data-type") == "choice1"){
+    if (e.currentTarget.getAttribute("data-type") == "choice1") {
         if (test[button1].value > test[button2].value) {
-            if(!document.querySelector("#img-1").classList.contains("postercorrectanswer")){
+            if (!document.querySelector("#img-1").classList.contains("postercorrectanswer")) {
                 console.log("You Win");
                 setMovieValue();
                 imgOneCorrect();
                 imgTwoIncorrect();
                 incrementScore();
                 setTimeout(removeMovieValue, 2000);
-                setTimeout(runGame, 2000 ,test);
+                setTimeout(runGame, 2000, test);
                 setTimeout(imgOneCorrect, 2000);
                 setTimeout(imgTwoIncorrect, 2000);
-            } else { return; }
+            } else {
+                return;
+            }
 
 
         } else {
-            if(!document.querySelector("#img-1").classList.contains("posterincorrectanswer")){
+            if (!document.querySelector("#img-1").classList.contains("posterincorrectanswer")) {
                 console.log("You Lose");
                 setMovieValue();
                 imgTwoCorrect();
@@ -400,25 +402,29 @@ function checkAnswer(e) {
                 setTimeout(gameOver, 2000);
                 setTimeout(imgTwoCorrect, 2000);
                 setTimeout(imgOneIncorrect, 2000);
-            } else { return; }
+            } else {
+                return;
+            }
 
         }
-    } else if (e.currentTarget.getAttribute("data-type") == "choice2"){
+    } else if (e.currentTarget.getAttribute("data-type") == "choice2") {
         if (test[button2].value > test[button1].value) {
-            if(!document.querySelector("#img-2").classList.contains("postercorrectanswer")){
+            if (!document.querySelector("#img-2").classList.contains("postercorrectanswer")) {
                 console.log("You Win");
                 setMovieValue();
                 imgTwoCorrect();
                 imgOneIncorrect();
                 incrementScore();
                 setTimeout(removeMovieValue, 2000);
-                setTimeout(runGame, 2000 ,test);
+                setTimeout(runGame, 2000, test);
                 setTimeout(imgTwoCorrect, 2000);
                 setTimeout(imgOneIncorrect, 2000);
-            } else { return; }
-    
+            } else {
+                return;
+            }
+
         } else {
-            if(!document.querySelector("#img-2").classList.contains("posterincorrectanswer")){
+            if (!document.querySelector("#img-2").classList.contains("posterincorrectanswer")) {
                 console.log("You Lose");
                 setMovieValue();
                 imgOneCorrect();
@@ -427,26 +433,29 @@ function checkAnswer(e) {
                 setTimeout(gameOver, 2000);
                 setTimeout(imgOneCorrect, 2000);
                 setTimeout(imgTwoIncorrect, 2000);
-            } else { return; }
+            } else {
+                return;
             }
+        }
     } else {
         console.log("Something is Horribly wrong.")
     }
 }
 
 // to toggle classes for borders
-function imgOneCorrect(){
+function imgOneCorrect() {
     document.querySelector("#img-1").classList.toggle('postercorrectanswer')
 }
 
-function imgOneIncorrect(){
+function imgOneIncorrect() {
     document.querySelector("#img-1").classList.toggle('posterincorrectanswer')
 }
-function imgTwoCorrect(){
+
+function imgTwoCorrect() {
     document.querySelector("#img-2").classList.toggle('postercorrectanswer')
 }
 
-function imgTwoIncorrect(){
+function imgTwoIncorrect() {
     document.querySelector("#img-2").classList.toggle('posterincorrectanswer')
 }
 
@@ -457,17 +466,21 @@ function incrementScore() {
 
     let oldScore = parseInt(document.querySelector("#score").innerText);
     document.querySelector("#score").innerText = ++oldScore;
-
+    let mainScore = parseInt(document.querySelector("#gameScore").innerText);
+    document.querySelector("#gameScore").innerText = ++mainScore;
 }
+
 
 // Toggle display none on front elements and show the restart game screen
 function gameOver() {
-    
-    document.querySelector("#game-over").classList.toggle("display-none")
-    document.querySelector(".scores").classList.toggle("display-none")
-    document.querySelector("#question-area").classList.toggle("display-none")
     let score = document.querySelector("#score").innerText
+    let gameScore = document.querySelector("#gameScore").innerText
     let username = document.querySelector("#username").value
+
+    document.querySelector("#game-over").classList.toggle("display-none")
+    document.querySelector(".score-area-front").classList.toggle("display-none")
+    document.querySelector(".score-area").classList.toggle("display-none")
+    document.querySelector("#question-area").classList.toggle("display-none")
     localStorage.setItem(USER_USERNAME_LS_KEY, username)
     if (parseInt(localStorage.getItem(USER_HIGHSCORE_LS_KEY)) < score) {
         localStorage.setItem(USER_HIGHSCORE_LS_KEY, score)
@@ -476,17 +489,21 @@ function gameOver() {
 
 //Toggle classes again to return to original state, set correct answer counter to 0, run game again.
 function retryGame() {
-    if(!document.querySelector("#game-over").classList.contains("placeholder")){
+    if (!document.querySelector("#game-over").classList.contains("placeholder")) {
         setTimeout(displayToggle, 1000);
-        setTimeout(runGame, 1000 ,test);
+        setTimeout(runGame, 1000, test);
         document.querySelector("#game-over").classList.add("placeholder")
     }
 }
 
-function displayToggle(){
+function displayToggle() {
     document.querySelector("#game-over").classList.toggle("placeholder")
+    document.querySelector("#game-over").classList.toggle("display-none")
     document.querySelector("#score").innerText = 0;
-    document.querySelector(".scores").classList.toggle("display-none")
+    document.querySelector(".score-area").classList.toggle("display-none")
+    document.querySelector("#gameScore").innerText = 0;
+    document.querySelector(".score-area-front").classList.toggle("display-none")
     document.querySelector("#question-area").classList.toggle("display-none")
     document.querySelector("#game-over").classList.remove("placeholder")
 };
+
