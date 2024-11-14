@@ -1,8 +1,9 @@
 # Blockbuster Battle
  Blockbuster Battle — Guess the Bigger Box Office Hit!
-![responsive.png](assets/images/responsive.png)
-<a href="https://medw4rds.github.io/hackathon-project-1/" target="_blank" style="text-align: center;">Click to view the LIVE site </a> <br>
+ <a href="https://medw4rds.github.io/hackathon-project-1/" target="_blank" style="text-align: center;"> <br>
+ Click to view the LIVE site </a> <br>
 (To open in a new tab/ window, press "ctrl" (or ⌘ for Mac) + click on the link) 
+![responsive.png](assets/images/responsive.png)
 
 ## Overview
 ### Purpose
