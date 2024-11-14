@@ -5,7 +5,6 @@
 (To open in a new tab/ window, press "ctrl" (or ⌘ for Mac) + click on the link) 
 
 ## Overview
-
 ### Purpose
 Blockbuster Battle is a fun and interactive movie quiz that challenges users to guess which of two films made more at the box office. The purpose of the game is to entertain movie enthusiasts and casual users alike by testing their knowledge of movie gross earnings. The app aims to provide an engaging experience through visually appealing graphics and an easy-to-use interface, enhancing users' appreciation of cinema and pop culture trivia.
 
