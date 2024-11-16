@@ -50,6 +50,11 @@ body {
     margin-bottom: 0;
 }
 
+#restart-game {
+    color: aliceblue;
+    font-size: x-large;
+}
+
 @media (max-width: 400px) {
     #movie-value-1,
     #movie-value-2 {
