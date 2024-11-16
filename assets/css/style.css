@@ -65,6 +65,22 @@ table {
     margin: auto;
 }
 
+/* loading page */
+.ml4 {
+    position: relative;
+    font-weight: 900;
+    font-size: 4.5em;
+}
+
+.ml4 .letters {
+    color: #df5555;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 2em;
+    right: 0;
+    opacity: 0; 
+}
 
 /* Modal feedback styling  */
 .modal-content {

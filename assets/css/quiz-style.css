@@ -20,7 +20,7 @@ body {
 #movie-value-2 {
     justify-content: center;
     font-weight: 900;
-    font-size: 2rem;
+    font-size: 1rem;
     line-height: 1em;
     text-align: center;
 }
@@ -46,8 +46,8 @@ body {
 }
 
 .quiz-text-input {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 @media (max-width: 400px) {
@@ -56,3 +56,4 @@ body {
         font-size: 100%;
     }
 }
+
