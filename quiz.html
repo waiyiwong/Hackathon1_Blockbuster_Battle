@@ -32,7 +32,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="quiz.html"><p class="wai-nav-text">Play Now</p></a>
+                            <a class="nav-link active" aria-current="page" href="loading.html"><p class="wai-nav-text">Play Now</p></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active wai-nav-text" href="#" data-bs-toggle="modal" data-bs-target="#feedback_modal"><p class="wai-nav-text">Feedback</p></a>
@@ -50,20 +50,19 @@
 
     <main>
         <div class="container-fluid top-banner">
-            <h2 class="text-center title">Pick the movie with the bigger box office hit!</h2>
+            <h3 class="text-center title">Pick the movie with the bigger box office hit!</h3>
             <p class="text-center quiz-text-input">Your name: <input type="text" name="username" id="username"></p>
         </div>
         <div class="container">
             <div class="container" id="question-area">
-                <div class="row">
-                    <div id="answer-1" class="col-6">
+                <div class="row justify-content-center">
+                    <div id="answer-1" class="col-sd-6 col-md-5 col-lg-3">
                         <div id="img-1" data-type="choice1" class="poster-container quiz-poster-identifier">
-                            <img src=""></img>
                         </div>
                         <p id="movie1">movie1</p>
                         <span id="movie-value-1" class="display-none">Number</span>
                     </div>
-                    <div id="answer-2" class="col-6">
+                    <div id="answer-2" class="col-sd-6 col-md-5 col-lg-3">
                         <div id="img-2" data-type="choice2" class="poster-container quiz-poster-identifier">
                         </div>
                         <p id="movie2">movie2</p>
@@ -117,7 +116,9 @@
         <div class="container-fluid" id="footer"></div>
     </footer>
 
+
     <script src="assets/js/quiz-script.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
