@@ -87,6 +87,10 @@ table {
     background-color: black !important;
 }
 
+.contact {
+    color: aliceblue;
+}
+
 @media (max-width: 768px) {
     .wai-leaderboard {
         height: auto; 
