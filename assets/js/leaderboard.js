@@ -5,6 +5,4 @@ document.addEventListener("DOMContentLoaded", function () {
     
     console.log(USER_HIGHSCORE_LS_KEY)
     userHighscore.innerText = USER_HIGHSCORE_LS_KEY;
-    
-
 });

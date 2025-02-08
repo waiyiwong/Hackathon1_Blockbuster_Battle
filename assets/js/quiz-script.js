@@ -504,3 +504,4 @@ document.querySelector(".score-area-front").classList.toggle("display-none");
 document.querySelector("#question-area").classList.toggle("display-none");
 document.querySelector("#game-over").classList.remove("placeholder");
 }
+
